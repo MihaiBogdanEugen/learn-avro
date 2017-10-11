@@ -21,10 +21,34 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-.idea
-*.iml
-target
-*.avro
+# Gralde
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Spring Tools Suite
+.apt_generated
 .classpath
+.factorypath
 .project
 .settings
+.springBeans
+
+# IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
