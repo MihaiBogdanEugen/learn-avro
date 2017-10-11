@@ -1,27 +1,21 @@
 package de.mls.mbe;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class AppTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-    public AppTest(String testName) {
-        super(testName);
-    }
+class AppTest {
 
-    public static Test suite() {
-        return new TestSuite(AppTest.class);
-    }
-
-    public void testSpecific() {
+    @Test
+    void testSpecific() {
 
         User expectedUser1 = new User();
         expectedUser1.setName("Alyssa");
@@ -63,7 +57,8 @@ public class AppTest extends TestCase {
         assertEquals(expectedUser3, actualUser3);
     }
 
-    public void testGeneric() throws IOException {
+    @Test
+    void testGeneric() throws IOException {
 
         String schemaFileName = "person.avsc";
         String serializationFileName = "people.avro";
@@ -162,6 +157,6 @@ public class AppTest extends TestCase {
             return;
         }
 
-        assertEquals(expected.intValue(), actual.intValue());
+        assertEquals(expected, actual);
     }
 }
