@@ -27,15 +27,15 @@ mainClassName = 'de.mls.mbe.App'
 
 dependencies {
 
-    compile 'org.apache.avro:avro:1.8.2'
-    compile 'org.apache.avro:avro-ipc:1.8.2'
-    compile 'org.slf4j:slf4j-api:1.7.25'
-    compile 'org.apache.logging.log4j:log4j-api:2.9.1'
-    compile 'org.apache.logging.log4j:log4j-core:2.9.1'
-    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.9.1'
-    testCompile group: 'org.apiguardian', name: 'apiguardian-api', version: '1.0.0'
-    testCompile group: 'org.junit.platform', name: 'junit-platform-commons', version: '1.0.1'
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.1'
+    compile "org.apache.avro:avro:${avro_version}"
+    compile "org.apache.avro:avro-ipc:${avro_version}"
+    compile "org.slf4j:slf4j-api:${slf4j_version}"
+    compile "org.apache.logging.log4j:log4j-api:${log4j_version}"
+    compile "org.apache.logging.log4j:log4j-core:${log4j_version}"
+    compile "org.apache.logging.log4j:log4j-slf4j-impl:${log4j_version}"
+    testCompile "org.apiguardian:apiguardian-api:${apiguardian_api_version}"
+    testCompile "org.junit.platform:junit-platform-commons:${junit_platform_version}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junit_version}"
 }
 
 avro {
