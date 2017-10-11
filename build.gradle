@@ -42,3 +42,7 @@ avro {
     createSetters = true
     stringType = 'CharSequence'
 }
+
+run {
+    args = ["--to@mail.com", "--from@mail.com", "--Hello Apache Avro"]
+}
