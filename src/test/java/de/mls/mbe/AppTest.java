@@ -112,7 +112,7 @@ class AppTest {
             return;
         }
 
-        assertEquals(expected.toString(), actual.toString());
+        Assertions.assertEquals(expected.toString(), actual.toString());
     }
 
     private static void assertEquals(User expected, User actual) {
@@ -157,6 +157,6 @@ class AppTest {
             return;
         }
 
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 }
