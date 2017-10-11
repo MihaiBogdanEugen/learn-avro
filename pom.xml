@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.mls.mbe</groupId>
-    <artifactId>learning-avro</artifactId>
+    <artifactId>learn-avro</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>learning-avro</name>
+    <name>learn-avro</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
