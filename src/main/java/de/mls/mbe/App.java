@@ -28,11 +28,11 @@ public class App {
 
         public String send(Message message) {
 
-            return "Sending message to '" + message.getTo() + "' from '" + message.getFrom() + "' with body '" + message.getBody() + "'";
+            return String.format("Sending message to %s from %s with body %s", message.getTo(), message.getFrom(), message.getBody());
         }
     }
 
-    public static final int ServerTcpPort = 1224;
+    private static final int SERVER_TCP_PORT = 1224;
 
     public static void main(String[] args) throws IOException {
 
@@ -46,9 +46,9 @@ public class App {
         message.setFrom(args[1]);
         message.setBody(args[2]);
 
-        Server server = new NettyServer(new SpecificResponder(Mail.class, new MailImpl()), new InetSocketAddress(ServerTcpPort));
+        Server server = new NettyServer(new SpecificResponder(Mail.class, new MailImpl()), new InetSocketAddress(SERVER_TCP_PORT));
 
-        NettyTransceiver client = new NettyTransceiver(new InetSocketAddress(ServerTcpPort));
+        NettyTransceiver client = new NettyTransceiver(new InetSocketAddress(SERVER_TCP_PORT));
 
         Mail proxy = SpecificRequestor.getClient(Mail.class, client);
 
@@ -60,7 +60,7 @@ public class App {
         server.close();
     }
 
-    public static List<User> deserializeFromFile(String fileName) {
+    static List<User> deserializeFromFile(String fileName) {
 
         File file = new File(fileName);
         if (!file.exists()) {
@@ -84,7 +84,7 @@ public class App {
         return result;
     }
 
-    public static List<GenericRecord> deserializeFromFile(String fileName, Schema schema) {
+    static List<GenericRecord> deserializeFromFile(String fileName, Schema schema) {
 
         File file = new File(fileName);
         if (!file.exists()) {
@@ -108,7 +108,7 @@ public class App {
         return result;
     }
 
-    public static void serializeToFile(String fileName, Schema schema, GenericRecord... records) {
+    static void serializeToFile(String fileName, Schema schema, GenericRecord... records) {
 
         if (records.length == 0) {
             return;
@@ -132,7 +132,7 @@ public class App {
         }
     }
 
-    public static void serializeToFile(String fileName, User... users) {
+    static void serializeToFile(String fileName, User... users) {
 
         if (users.length == 0) {
             return;
